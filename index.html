@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <title>GOBLINAJEDREZ Mayoria de numeros</title>
+  <link rel="stylesheet" href="./vendor/chessground/package/assets/chessground.base.css">
+  <link rel="stylesheet" href="./vendor/chessground/package/assets/chessground.brown.css">
+  <link rel="stylesheet" href="./vendor/chessground/package/assets/chessground.cburnett.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="game-shell" aria-label="GOBLINAJEDREZ Mayoria de numeros">
+    <header class="hud">
+      <div class="brand">
+        <img src="./assets/goblin-logo.png" alt="">
+        <div>
+          <p>GOBLINAJEDREZ</p>
+          <strong>Mayoria de numeros</strong>
+        </div>
+      </div>
+      <div class="stats" aria-label="Marcador">
+        <span><em aria-hidden="true">#</em><b id="progress">1 / 20</b><small>Nivel</small></span>
+        <span><em aria-hidden="true">+</em><b id="score">0</b><small>Aciertos</small></span>
+        <span><em aria-hidden="true">s</em><b id="timer">60</b><small>Tiempo</small></span>
+      </div>
+    </header>
+
+    <section class="progress-strip" aria-label="Progreso del reto">
+      <div class="progress-line" aria-hidden="true">
+        <span id="progressFill"></span>
+      </div>
+      <p class="streak-badge" id="streakBadge" hidden>RACHA x3</p>
+    </section>
+
+    <section class="play-stage" id="game">
+      <section class="board-wrap" aria-label="Tablero de numeros">
+        <div class="effect-layer" id="effectLayer" aria-hidden="true"></div>
+        <div id="board" class="board"></div>
+      </section>
+
+      <section class="answer-panel" aria-live="polite">
+        <div class="question-block" id="questionBlock">
+          <p class="question-kicker" id="questionText">Cuantos peones tiene la mayoria?</p>
+          <div class="answer-grid" id="answerGrid"></div>
+          <div class="feedback" id="feedback" role="status"></div>
+          <p class="explanation" id="explanation"></p>
+        </div>
+
+        <div class="final-panel" id="finalPanel" hidden>
+          <img src="./assets/goblin-logo.png" alt="">
+          <div class="final-medal" id="finalMedal" aria-hidden="true"></div>
+          <p class="final-title" id="finalTitle"></p>
+          <p class="final-score" id="finalScore"></p>
+          <p class="final-detail" id="finalDetail"></p>
+          <button class="retry-button" type="button" id="retryButton">Reintentar</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
