@@ -364,14 +364,20 @@ button {
   gap: clamp(10px, 1.8vmin, 16px);
 }
 
+.question-block[hidden] {
+  display: none;
+}
+
 .question-kicker {
   margin: 0;
-  color: var(--muted);
-  font-size: clamp(0.8rem, 2vmin, 1rem);
-  font-weight: 800;
+  color: var(--cream);
+  font-size: clamp(0.92rem, 2.25vmin, 1.12rem);
+  font-weight: 950;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
+  text-wrap: balance;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.38);
 }
 
 .answer-grid {
@@ -385,13 +391,13 @@ button {
 }
 
 .answer-button {
-  min-height: clamp(112px, 20vmin, 156px);
+  min-height: clamp(104px, 18vmin, 146px);
   width: 100%;
-  border: 3px solid #050809;
+  border: 2px solid #050809;
   border-radius: 8px;
   display: grid;
   place-items: center;
-  padding: clamp(10px, 2vmin, 16px);
+  padding: clamp(8px, 1.8vmin, 14px);
   cursor: pointer;
   font-size: clamp(1rem, 2.5vmin, 1.18rem);
   font-weight: 900;
@@ -406,31 +412,33 @@ button {
   overflow: hidden;
   border-color: rgba(5, 8, 9, 0.96);
   background:
+    radial-gradient(circle at 50% 18%, rgba(255, 248, 216, 0.28), transparent 38%),
     linear-gradient(135deg, rgba(255, 248, 216, 0.24) 0%, transparent 34%),
     linear-gradient(180deg, #fff0a8 0%, #e8c96f 54%, #af8f3c 100%);
   box-shadow:
     inset 0 4px 0 rgba(255, 255, 255, 0.34),
     inset 0 -7px 0 rgba(60, 39, 10, 0.22),
-    0 7px 0 #050809,
-    0 18px 30px rgba(0, 0, 0, 0.32);
+    0 5px 0 #050809,
+    0 14px 24px rgba(0, 0, 0, 0.28);
   color: #071315;
 }
 
 .answer-button--number:nth-child(2) {
   background:
+    radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.26), transparent 38%),
     linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, transparent 34%),
     linear-gradient(180deg, #9df3ed 0%, #4fc6c4 55%, #237078 100%);
   box-shadow:
     inset 0 4px 0 rgba(255, 255, 255, 0.28),
     inset 0 -7px 0 rgba(0, 0, 0, 0.18),
-    0 7px 0 #050809,
-    0 18px 30px rgba(0, 0, 0, 0.32);
+    0 5px 0 #050809,
+    0 14px 24px rgba(0, 0, 0, 0.28);
 }
 
 .answer-button--number::before {
   content: "";
   position: absolute;
-  inset: 8px;
+  inset: 6px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   pointer-events: none;
@@ -438,27 +446,18 @@ button {
 
 .choice-number {
   position: relative;
-  width: clamp(76px, 16vmin, 118px);
-  aspect-ratio: 1;
+  z-index: 1;
   display: grid;
   place-items: center;
-  border: 3px solid rgba(5, 8, 10, 0.72);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.46) 0%, rgba(255, 255, 255, 0.08) 36%, transparent 37%),
-    linear-gradient(180deg, rgba(255, 248, 216, 0.92) 0%, rgba(255, 226, 128, 0.88) 100%);
-  box-shadow:
-    0 12px 0 rgba(5, 8, 9, 0.22),
-    0 18px 24px rgba(0, 0, 0, 0.22),
-    inset 0 3px 0 rgba(255, 255, 255, 0.5),
-    inset 0 -5px 0 rgba(80, 52, 13, 0.18);
-  font-size: clamp(3rem, 9vmin, 5.4rem);
+  min-width: 1.4ch;
+  color: #061014;
+  font-size: clamp(3.35rem, 9.5vmin, 5.8rem);
   font-weight: 950;
   line-height: 1;
   text-align: center;
   text-shadow:
-    0 2px 0 rgba(255, 255, 255, 0.36),
-    0 5px 8px rgba(0, 0, 0, 0.16);
+    0 2px 0 rgba(255, 255, 255, 0.28),
+    0 7px 13px rgba(0, 0, 0, 0.22);
 }
 
 .choice-label {
@@ -875,8 +874,7 @@ button {
   }
 
   .choice-number {
-    width: 72px;
-    font-size: 3rem;
+    font-size: 3.3rem;
   }
 }
 
