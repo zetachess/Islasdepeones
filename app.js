@@ -110,6 +110,18 @@ function normalizeNumericValue(value) {
   return Number.isFinite(number) ? number : null;
 }
 
+function prettyQuestion(question) {
+  if (question === "Cuantas islas de peones hay?") {
+    return "¿Cuántas islas de peones hay?";
+  }
+
+  if (question === "Cuantas islas de peones tienen las negras?") {
+    return "¿Cuántas islas de peones tienen las negras?";
+  }
+
+  return question;
+}
+
 function solutionFromPosition(position, counts) {
   const explicitNumber = normalizeNumericValue(position.solutionNumber ?? position.answer ?? position.solution);
   if (explicitNumber !== null) return explicitNumber;
@@ -159,7 +171,7 @@ function normalizePosition(position, index) {
     counts,
     solution,
     choices,
-    question: position.question || "Cuantos peones tiene el bando con mayoria?",
+    question: prettyQuestion(position.question || "¿Cuántos peones tiene el bando con mayoría?"),
     explanation: position.explanation || `Blancas ${counts.white} / Negras ${counts.black}. La respuesta correcta es ${solution}.`
   };
 }
